@@ -1,15 +1,22 @@
 import Header from "./components/Header";
-import MovieList from "./components/MoviesList";
-import { MovieContainer } from "./styles/MovieContainer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./views/Home";
+import React from "react";
+import About from "./views/About";
+import MovieDetail from "./views/MovieDetail";
 
 export default function App() {
   return (
     <div className="App">
-      <Header />
+      <BrowserRouter>
+        <Header />
 
-      <MovieContainer>
-        <MovieList movies={[]} />
-      </MovieContainer>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/movie/:id" element={<MovieDetail />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
