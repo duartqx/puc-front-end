@@ -8,6 +8,6 @@ export const MainMenuContainer = styled.nav`
     li {
       display: inline-block;
       margin-right: 10px;
+    }
   }
-}
-`
+`;
